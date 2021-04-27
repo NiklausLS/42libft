@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 10:05:12 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/24 10:46:10 by nleempoe         ###   ########.fr       */
+/*   Created: 2021/04/23 16:59:18 by nleempoe          #+#    #+#             */
+/*   Updated: 2021/04/23 17:03:00 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *str, const char *word, size_t len)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t		cc;
-	size_t		cm;
+	int		c;
+	char	*s;
+	char	*d;
 
-	cc = 0;
-	if (word  == '\0')
-		return ((char *)str);
-	if (len == 0)
-		return (NULL);
-	while (str[cc] && cc < len)
+	c = 0;
+	s = (char *)src;
+	d = (char *)dest;
+	while (n > c)
 	{
-		cm = 0;
-		while (str[cc] == word[cc + cm] && cc + cm < len)
-		{
-			if (word[cm + 1] == '\0')
-			{
-				return ((char *) word + cc);
-			}
-			cm++;
-		}
-		cc++;
+		d[c] = s[c];
+		c++;
 	}
-	return (0);	
+	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 13:52:50 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/10 11:28:00 by nleempoe         ###   ########.fr       */
+/*   Updated: 2021/04/27 04:39:27 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ int main()
 	const char *petit  = "bb";
 	size_t ltest = 7;
 	char *ptr;
+	int ecount = 2;
+	int esize = 2;
+	char testsub [] = "ABCDE"; 
 
 	ptr = strnstr(grand, petit, ltest);
 
@@ -66,6 +69,16 @@ int main()
 	printf("Vraie renvoie : %lu\n", strlcat(dest, src, 0));
 	printf("Ma fonction renvoie : %lu\n", ft_strlcat(dest, src, size));
 
-	printf("STRNSTR\n");
+	printf("\nSTRNSTR\n");
 	printf("%s\n", ptr);
+
+	printf("\nCALLOC\n");
+	printf("Mon calloc = %p\n", ft_calloc(ecount, esize));
+	printf("Calloc = %p\n", calloc(ecount, esize));
+
+	printf("\nSUBSTR\n");
+	printf("ABCDE devient : %s\n", ft_substr(testsub, 0, 5));
+
+	printf("\nSTRJOIN\n");
+
 }

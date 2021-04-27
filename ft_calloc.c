@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 10:05:12 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/24 10:46:10 by nleempoe         ###   ########.fr       */
+/*   Created: 2021/04/24 09:47:40 by nleempoe          #+#    #+#             */
+/*   Updated: 2021/04/26 09:40:58 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *str, const char *word, size_t len)
+void	*ft_calloc(size_t ecount, size_t esize)
 {
-	size_t		cc;
-	size_t		cm;
+	void	*ptr;
 
-	cc = 0;
-	if (word  == '\0')
-		return ((char *)str);
-	if (len == 0)
+	ptr = malloc(ecount * esize);
+	if (ptr == NULL)
 		return (NULL);
-	while (str[cc] && cc < len)
-	{
-		cm = 0;
-		while (str[cc] == word[cc + cm] && cc + cm < len)
-		{
-			if (word[cm + 1] == '\0')
-			{
-				return ((char *) word + cc);
-			}
-			cm++;
-		}
-		cc++;
-	}
-	return (0);	
+	ft_bzero(ptr, ecount * esize);
+	return (ptr);
 }

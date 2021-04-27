@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 10:05:12 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/24 10:46:10 by nleempoe         ###   ########.fr       */
+/*   Created: 2021/04/23 17:31:13 by nleempoe          #+#    #+#             */
+/*   Updated: 2021/04/23 17:36:39 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *str, const char *word, size_t len)
+char	*ft_strdup(const char *src)
 {
-	size_t		cc;
-	size_t		cm;
+	int		c;
+	char	*dst;
 
-	cc = 0;
-	if (word  == '\0')
-		return ((char *)str);
-	if (len == 0)
-		return (NULL);
-	while (str[cc] && cc < len)
+	c = 0;
+	
+	while (src[c])
 	{
-		cm = 0;
-		while (str[cc] == word[cc + cm] && cc + cm < len)
-		{
-			if (word[cm + 1] == '\0')
-			{
-				return ((char *) word + cc);
-			}
-			cm++;
-		}
-		cc++;
+		dst[c] = src[c];
+		c++;
 	}
-	return (0);	
+	dst[c] = '\0';
+	return (dst);
 }

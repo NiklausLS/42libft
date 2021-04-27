@@ -6,7 +6,7 @@
 #    By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 09:18:54 by nleempoe          #+#    #+#              #
-#    Updated: 2021/04/09 14:06:36 by nleempoe         ###   ########.fr        #
+#    Updated: 2021/04/27 04:24:03 by nleempoe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,17 @@ SRC = main.c \
 	  ft_atoi.c \
 	  ft_strlcpy.c \
 	  ft_strlcat.c \
-	  ft_strnstr.c
+	  ft_strnstr.c \
+	  ft_memset.c \
+	  ft_memcpy.c \
+	  ft_memccpy.c \
+	  ft_memmove.c \
+	  ft_memchr.c \
+	  ft_memcmp.c \
+	  ft_bzero.c \
+	  ft_strdup.c \
+	  ft_calloc.c \
+	  ft_substr.c
 
 OBJ = $(SRC:.c=.o)
 

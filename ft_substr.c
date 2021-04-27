@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 10:05:12 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/24 10:46:10 by nleempoe         ###   ########.fr       */
+/*   Created: 2021/04/26 09:59:57 by nleempoe          #+#    #+#             */
+/*   Updated: 2021/04/27 04:37:21 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *str, const char *word, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t		cc;
-	size_t		cm;
+	size_t	c;
+	size_t	c2;
+	char	*str;
 
-	cc = 0;
-	if (word  == '\0')
-		return ((char *)str);
-	if (len == 0)
-		return (NULL);
-	while (str[cc] && cc < len)
+	c = 0;
+	c2 = 0;
+	str = (char *)malloc(sizeof(*s) * len + 1);
+	while (s[c])
 	{
-		cm = 0;
-		while (str[cc] == word[cc + cm] && cc + cm < len)
+		if (c >= start && c2 < len)
 		{
-			if (word[cm + 1] == '\0')
-			{
-				return ((char *) word + cc);
-			}
-			cm++;
+			str[c2] = s[c];
+			c2++;
 		}
-		cc++;
+		c++;
 	}
-	return (0);	
+	str[c2] = '\0';
+	return (str);
 }

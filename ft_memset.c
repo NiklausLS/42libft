@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 10:05:12 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/24 10:46:10 by nleempoe         ###   ########.fr       */
+/*   Created: 2021/04/23 16:56:18 by nleempoe          #+#    #+#             */
+/*   Updated: 2021/04/26 09:21:12 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *str, const char *word, size_t len)
+void	*ft_memset(void *s, int o, size_t n)
 {
-	size_t		cc;
-	size_t		cm;
+	char	*str;
 
-	cc = 0;
-	if (word  == '\0')
-		return ((char *)str);
-	if (len == 0)
-		return (NULL);
-	while (str[cc] && cc < len)
+	str = s;
+	while (n > 0)
 	{
-		cm = 0;
-		while (str[cc] == word[cc + cm] && cc + cm < len)
-		{
-			if (word[cm + 1] == '\0')
-			{
-				return ((char *) word + cc);
-			}
-			cm++;
-		}
-		cc++;
+		*str = (unsigned char) o;
+		str++;
+		n--;
 	}
-	return (0);	
+	return (s);
 }

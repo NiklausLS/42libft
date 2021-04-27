@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 10:05:12 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/24 10:46:10 by nleempoe         ###   ########.fr       */
+/*   Created: 2021/04/23 17:15:57 by nleempoe          #+#    #+#             */
+/*   Updated: 2021/04/23 17:22:55 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *str, const char *word, size_t len)
+void	*ft_memchr(const void *memb, int search, size_t n)
 {
-	size_t		cc;
-	size_t		cm;
+	size_t	c;
 
-	cc = 0;
-	if (word  == '\0')
-		return ((char *)str);
-	if (len == 0)
-		return (NULL);
-	while (str[cc] && cc < len)
+	c = 0;
+	while (c < n)
 	{
-		cm = 0;
-		while (str[cc] == word[cc + cm] && cc + cm < len)
+		if (((unsigned char *)memb)[c] == (unsigned char)search)
 		{
-			if (word[cm + 1] == '\0')
-			{
-				return ((char *) word + cc);
-			}
-			cm++;
+			return (&((unsigned char *)memb)[c]);
 		}
-		cc++;
+		c++;
 	}
-	return (0);	
+	return (NULL);
 }

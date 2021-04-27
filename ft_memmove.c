@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 10:05:12 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/24 10:46:10 by nleempoe         ###   ########.fr       */
+/*   Created: 2021/04/23 17:08:56 by nleempoe          #+#    #+#             */
+/*   Updated: 2021/04/24 10:52:23 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *str, const char *word, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t		cc;
-	size_t		cm;
+	size_t	c;
+	char	*s;
+	char	*d;
 
-	cc = 0;
-	if (word  == '\0')
-		return ((char *)str);
-	if (len == 0)
-		return (NULL);
-	while (str[cc] && cc < len)
+	c = 0;
+	s = (char *)src;
+	d = (char *)dest;
+	if (d > s)
 	{
-		cm = 0;
-		while (str[cc] == word[cc + cm] && cc + cm < len)
-		{
-			if (word[cm + 1] == '\0')
-			{
-				return ((char *) word + cc);
-			}
-			cm++;
-		}
-		cc++;
+		while (n-- > 0)
+			d[n] = s[n];
 	}
-	return (0);	
+	else
+	{
+		while (n > c)
+		{
+			d[c] = s[c];
+			c++;
+		}
+	}
+	return (dest);
 }

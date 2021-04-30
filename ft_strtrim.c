@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 11:25:01 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/28 05:47:40 by nleempoe         ###   ########.fr       */
+/*   Created: 2021/04/29 08:55:25 by nleempoe          #+#    #+#             */
+/*   Updated: 2021/04/30 04:03:41 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
+	char	*ptr;
+	size_t	start;
+	size_t	end;
 	size_t	c;
-
+	
+	start = 0;
+	ptr = NULL;
+	end = ft_strlen(s1);
 	c = 0;
-	while (s1[c] && s2[c] && c < n && s1[c] == s2[c])
-	{
-		c++;
-	}
-	if (n > c)
-		return ((unsigned char)s1[c] - (unsigned char)s2[c]);
-	else
-		return (0);
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	while (start < end && s1[end - 1] && ft_strchr(set, s1[end - 1]))
+		end--;
+	ptr = (char *)malloc(sizeof(char) * (end - start + 1));
+	while(start < end)
+		ptr[c++] = s1[start++];
+	return (ptr);
 }

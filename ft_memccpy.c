@@ -6,7 +6,7 @@
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 17:03:41 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/23 17:08:39 by nleempoe         ###   ########.fr       */
+/*   Updated: 2021/04/27 19:50:56 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memccpy(void *dest, const void *src, int cha, size_t n)
 {
-	int		c;
+	size_t	c;
 	char	*s;
 	char	*d;
 

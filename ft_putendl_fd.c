@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/29 08:55:25 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/05/03 07:43:34 by nleempoe         ###   ########.fr       */
+/*   Created: 2021/05/02 04:30:54 by nleempoe          #+#    #+#             */
+/*   Updated: 2021/05/02 04:39:32 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*ptr;
-	size_t	start;
-	size_t	end;
-	size_t	c;
-
-	ptr = NULL;
-	start = 0;
-	end = ft_strlen(s1);
-	c = 0;
-	while (s1[start] && ft_strchr(set, s1[start]))
-		start++;
-	while (start < end && s1[end - 1] && ft_strchr(set, s1[end - 1]))
-		end--;
-	ptr = (char *)malloc(sizeof(char) * (end - start + 1));
-	while (start < end)
-		ptr[c++] = s1[start++];
-	ptr[c] = '\0';
-	return (ptr);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

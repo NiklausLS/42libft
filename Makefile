@@ -6,7 +6,7 @@
 #    By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 09:18:54 by nleempoe          #+#    #+#              #
-#    Updated: 2021/04/30 03:46:06 by nleempoe         ###   ########.fr        #
+#    Updated: 2021/05/04 04:19:46 by nleempoe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ CC = gcc
 RM = rm -vrf
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
-SRC = main.c \
-	  ft_strlen.c \
+SRC = ft_strlen.c \
 	  ft_isalpha.c \
 	  ft_isdigit.c \
 	  ft_isalnum.c \
@@ -41,7 +40,13 @@ SRC = main.c \
 	  ft_substr.c \
 	  ft_strjoin.c \
 	  ft_strnstr.c \
-	  ft_strtrim.c
+	  ft_strtrim.c \
+	  ft_itoa.c \
+	  ft_putchar_fd.c \
+	  ft_putstr_fd.c \
+	  ft_putendl_fd.c \
+	  ft_putnbr_fd.c \
+	  ft_strmapi.c
 
 OBJ = $(SRC:.c=.o)
 

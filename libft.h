@@ -6,7 +6,7 @@
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 11:17:02 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/30 03:46:38 by nleempoe         ###   ########.fr       */
+/*   Updated: 2021/05/04 04:20:16 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int		ft_strlen(const char *str);
 int		ft_isalpha(int c);
@@ -43,5 +44,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strnstr(const char *str, const char *word, size_t n);
 char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif

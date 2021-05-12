@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 11:15:17 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/05/11 06:28:32 by nleempoe         ###   ########.fr       */
+/*   Created: 2021/05/11 04:26:55 by nleempoe          #+#    #+#             */
+/*   Updated: 2021/05/11 05:32:04 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strndup(const char *src, size_t n)
 {
-	char	*ptr;
+	char	*dst;
 
-	ptr = (char *)str;
-	if (c == '\0')
-		return (ptr + ft_strlen(ptr));
-	while (*ptr)
-	{
-		if (*ptr == (char)c)
-			return (ptr);
-		ptr++;
-	}
-	return (NULL);
+	dst = (char *)malloc(sizeof(char) * n + 1);
+	if (!dst)
+		return (NULL);
+	dst = ft_strncpy(dst, src, n);
+	dst[n] = '\0';
+	return (dst);
 }

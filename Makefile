@@ -6,7 +6,7 @@
 #    By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 09:18:54 by nleempoe          #+#    #+#              #
-#    Updated: 2021/05/04 04:19:46 by nleempoe         ###   ########.fr        #
+#    Updated: 2021/05/12 03:30:39 by nleempoe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,11 @@ SRC = ft_strlen.c \
 	  ft_putstr_fd.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c \
-	  ft_strmapi.c
+	  ft_strmapi.c \
+	  ft_strncpy.c \
+	  ft_strndup.c \
+	  ft_split.c
+
 
 OBJ = $(SRC:.c=.o)
 

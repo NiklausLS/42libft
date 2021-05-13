@@ -6,7 +6,7 @@
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 09:59:57 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/05/12 04:06:29 by nleempoe         ###   ########.fr       */
+/*   Updated: 2021/05/12 15:22:21 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,26 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t		c;
+	size_t		min;
 	char		*str;
 
 	c = 0;
-	if (!s || len <= 0 || start > ft_strlen(s))
+	min = ft_strlen(s);
+	if (!s || start >= ft_strlen(s) || len <= 0)
 		return (ft_strdup(""));
+	if (min < len)
+		len = min;
 	str = malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (NULL);
 	if (start < ft_strlen(s))
 	{
-		while (c < len && s[start])
+		while (s[start] && c < len)
 		{
-			str[c] = s[start];
+			str[c] = s[start + c];
 			c++;
-			start++;
 		}
 	}
 	str[c] = '\0';
-	return (str);
+	return (str);	
 }

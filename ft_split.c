@@ -6,7 +6,7 @@
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 00:58:53 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/05/11 06:10:55 by nleempoe         ###   ########.fr       */
+/*   Updated: 2021/05/13 03:28:40 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static int	ft_strcount(const char *s, char c)
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i] != '\0')
+		if (s[i])
 			count++;
-		while (s[i] && s[i] != c)
+		while (s[i] && (s[i] != c))
 			i++;
 	}
 	return (count);

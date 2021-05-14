@@ -6,7 +6,7 @@
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 09:59:57 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/05/12 15:22:21 by nleempoe         ###   ########.fr       */
+/*   Updated: 2021/05/14 02:12:38 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		}
 	}
 	str[c] = '\0';
-	return (str);	
+	return (str);
 }

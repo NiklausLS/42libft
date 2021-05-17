@@ -6,12 +6,12 @@
 #    By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 09:18:54 by nleempoe          #+#    #+#              #
-#    Updated: 2021/05/14 02:05:15 by nleempoe         ###   ########.fr        #
+#    Updated: 2021/05/17 14:20:01 by nleempoe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-RM = rm -vrf
+RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 SRC = ft_strlen.c \
@@ -58,7 +58,6 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	ar rcs $(NAME) $(OBJ)
-	$(CC) $(CFLAGS) $(SRC) -L. $(NAME) -o prog
 
 clean :
 	$(RM) $(OBJ)
@@ -67,3 +66,5 @@ fclean : clean
 	$(RM) $(NAME)
 
 re : fclean $(NAME)
+
+.PHONY : all clean fclean re

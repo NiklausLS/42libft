@@ -6,7 +6,7 @@
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 17:42:05 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/05/11 04:50:45 by nleempoe         ###   ########.fr       */
+/*   Updated: 2021/05/19 04:44:53 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 		sizend++;
 	if (n == 0)
 		return (sizend);
-	while ((char)src[c] && (c < (n -1)))
+	while ((char)src[c] && (c < (n - 1)))
 	{
 		dest[c] = (char)src[c];
 		c++;

@@ -6,7 +6,7 @@
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 10:05:12 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/29 01:11:51 by nleempoe         ###   ########.fr       */
+/*   Updated: 2021/05/26 19:26:23 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *str, const char *word, size_t n)
 	nword = ft_strlen(word);
 	while (*str != '\0' && nword <= n--)
 	{
-		if (*str == *word && (0 == strncmp(str, word, nword)))
+		if (*str == *word && (0 == ft_strncmp(str, word, nword)))
 			return ((char *)str);
 		str++;
 	}

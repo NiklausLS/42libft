@@ -6,17 +6,16 @@
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 11:17:02 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/05/14 02:17:37 by nleempoe         ###   ########.fr       */
+/*   Updated: 2021/06/08 11:52:28 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
-# include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
 
 size_t	ft_strlen(const char *str);
 int		ft_isalpha(int c);

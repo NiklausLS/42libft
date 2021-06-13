@@ -6,13 +6,13 @@
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 00:58:53 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/05/14 02:11:14 by nleempoe         ###   ########.fr       */
+/*   Updated: 2021/05/27 09:11:29 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_strcount(char const *s, char c)
+int	ft_strcount(char const *s, char c)
 {
 	unsigned int	i;
 	int				count;

@@ -6,7 +6,7 @@
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 11:52:04 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/27 19:43:43 by nleempoe         ###   ########.fr       */
+/*   Updated: 2021/05/26 02:06:45 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	unsigned int	c;
-	int				neg;
-	int				res;
+	unsigned long int	c;
+	int					neg;
+	unsigned long int	res;
 
 	c = 0;
 	neg = 1;

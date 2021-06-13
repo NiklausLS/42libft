@@ -6,7 +6,7 @@
 #    By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 09:18:54 by nleempoe          #+#    #+#              #
-#    Updated: 2021/05/17 14:27:10 by nleempoe         ###   ########.fr        #
+#    Updated: 2021/06/08 11:52:17 by nleempoe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,6 @@ SRC = ft_strlen.c \
 	  ft_strncpy.c \
 	  ft_strndup.c \
 	  ft_split.c
-
 
 OBJ = $(SRC:.c=.o)
 

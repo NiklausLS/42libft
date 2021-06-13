@@ -6,7 +6,7 @@
 /*   By: nleempoe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 04:37:48 by nleempoe          #+#    #+#             */
-/*   Updated: 2021/04/29 00:26:40 by nleempoe         ###   ########.fr       */
+/*   Updated: 2021/05/25 19:46:43 by nleempoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*dest;
 	char	*destinit;
 
+	if (!s1 || !s2)
+		return (NULL);
 	dest = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!dest)
 		return (NULL);
